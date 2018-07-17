@@ -9,14 +9,31 @@
         <li v-for="item in items">{{item.title}}</li>
       </ul>
 
-      <button v-on:click="greet">Say Greeting</button>
+      <button v-on:click="greet('Hello World')">Say Greeting</button>
+      <br/>
+      <input type="text"v-on:keyup="pressKey" v-on:keyup.enter="enterHit"></input>
 
+      <hr/>
+
+      <label>First Name: </label><input type="text" v-model="user.firstName">
+      <br/>
+      <label>Last Name: </label><input type="text" v-model="user.lastName">
+
+      <h3>{{fullName}}</h3>
+
+      <h2>{{msg}}</h2>
     </div>
 </template>
 
 <script>
     export default {
         name: "test",
+      props: {
+        msg: {
+          type: String,
+          default: 'Foobar'
+        }
+      },
       data() {
           return {
             title: 'Hello World',
@@ -33,8 +50,19 @@
           }
       },
       methods: {
-        greet: function () {
-          alert('hello');
+        greet: function (greeting) {
+          alert(greeting);
+        },
+        pressKey: function(e){
+          console.log(e.target.value);
+        },
+        enterHit: function() {
+          console.log('You hit enter');
+        }
+      },
+      computed: {
+        fullName: function() {
+          return this.user.firstName+ ' ' + this.user.lastName;
         }
       }
     }
