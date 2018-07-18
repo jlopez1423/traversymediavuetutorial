@@ -21,4 +21,4 @@ npm run build --report
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 
-[Left off on](https://youtu.be/z6hQqgvGI4Y?t=1813)
+[Left off on](https://youtu.be/z6hQqgvGI4Y?t=2382)
